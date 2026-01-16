@@ -1,0 +1,29 @@
+name: Troubleshooting
+description: Report a Problem | Error
+labels: ["troubleshooting", "bug-report"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Troubleshooting | Bugfixing**
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: |
+        A Description of this Error | Problem.
+
+        Detailed Description of the Problem | Error.
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Library
+      description: What Library not correct working?
+      options:
+        - statements
+        - class
+    validations:
+      required: true

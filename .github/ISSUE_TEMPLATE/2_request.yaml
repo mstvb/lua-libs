@@ -1,0 +1,26 @@
+name: Idea | Feature
+description: Suggest a new Idea or Feature
+labels: ["new-ideas", "new-features"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Idea | Feature**
+
+  - type: textarea
+    attributes:
+      label: Summary
+      description: |
+        Explain your Ideas | Features for this Project
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Library
+      description: Library?
+      options:
+        - statements
+        - class
+    validations:
+      required: false
