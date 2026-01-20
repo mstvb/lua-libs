@@ -1,31 +1,26 @@
+---@diagnostic disable: undefined-global
 require('libraries/class') -- import Class
 require('libraries/match') -- Import Statements
-
 
 WINDOW_HEIGHT = 480
 WINDOW_WIDTH = 720
 WINDOW_TITLE = 'Player Test with Lua Class'
 FRAMERATE = 60
 
-local player = cls('player'):__init__({ 
-	--- Initialize Player
-	---
-	--- Attributes
-	--- @types posX : number
-	--- @types posY : number
-	--- @types speed : number
-	--- @types size : number
-	--- @types actions : table (string | string)
-	---
-	
+local player = {
 posX = 360,
 posY = 240,
 speed = 3,
 size = 10,
-actions = {}
-})
+actions = {}}
 
-function player:setAction(action, key)
+--- @class player
+--- @constructor 
+--- 
+--- Set Action
+--- @param action string
+--- @param key string
+function player:setAction(action , key)
 	--- Set Action
 	---
 	--- Parameters
@@ -60,7 +55,7 @@ function love.load()
 	player:setAction('left', 'a')
 	player:setAction('right', 'd')
 	
-	test = statement()
+	local test = statement()
 	test:addStatement('test-a', 'a')
 	test:addStatement('test-b', true)
 	test:setDefault('a default option')

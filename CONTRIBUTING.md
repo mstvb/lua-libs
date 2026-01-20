@@ -23,11 +23,12 @@
 
 - ### :notebook: Documenation
 
-  > Use `numpydoc` as Code Style 
+  > Use `numpydoc` and `Lua Annotations` as Code Style 
 
 - ### :book: References
 
   - [1] [Templates](https://github.com/mstvb/forge-api/issues/new/choose)
-  - [2] [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html#)
+  - [2] [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html)
+  - [3] [Lua Annotations](https://www.barbarianmeetscoding.com/notes/lua/annotations/)
 
 
