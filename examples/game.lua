@@ -56,9 +56,9 @@ function love.load()
 	player:setAction('right', 'd')
 	
 	local test = statement()
-	test:addStatement('test-a', 'a')
-	test:addStatement('test-b', true)
-	test:setDefault('a default option')
+	test:add('test-a', 'a')
+	test:add('test-b', true)
+	test:set_default('a default option')
 	print(test:get('tt'))
 	
 	love.window.setMode(WINDOW_WIDTH, WINDOW_HEIGHT)
