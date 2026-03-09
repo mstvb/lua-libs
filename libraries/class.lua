@@ -22,44 +22,6 @@ function cls(className)
         return instance
     end
 
-    --- Set a property on the instance
-    --- @method setProperty
-    --- @param key string The property name
-    --- @param val any The value to assign
-    ---
-    function class:setProperty(key, val)
-        if key and val then
-            self[key] = val
-        else
-            return
-        end
-    end
-
-    --- Get a Property from Class
-    --- @method getProperty
-    --- @param key string The property name
-    --- @return any val
-    ---
-    function class:getProperty(key)
-        if key then
-            return self[key]
-        else
-            return error('Property not exists')
-        end
-    end
-
-    --- Remove a Property from Class
-    --- @method deleteProperty
-    --- @param key string The property name
-    ---
-    function class:deleteProperty(key)
-        if key then
-            self[key] = nil
-        else
-            return
-        end
-    end
-
     --- Returns Class Name
     --- @method __name__
     --- @return string __name
@@ -69,5 +31,4 @@ function cls(className)
     end
 
     return class
-
 end
