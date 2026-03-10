@@ -1,20 +1,31 @@
 --- @class cls
---- @field __name string The name of the class
---- @field __index table Points to itself for prototypical inheritance
----
---- Creates a new Class definition
---- @param className string The name of the class for debugging and identity
---- @return cls | table
 --- 
+--- Parameters
+--- @param className string
+---
+--- Attributes
+--- @field __name string
+--- @field __index table
+---
+--- Methods
+--- @field __init__ function
+--- @field __name__ function
+--- 
+--- Returns
+--- @return class instance
+---
 function cls(className)
     
     local class = {}
     class.__name = className
     class.__index = class
 
-    --- Class Constructor
-    --- @constructor
-    --- @param attributes? table Class Attributes
+    --- Initialize Class
+    --- 
+    --- Parameters
+    --- @param attributes? table
+    ---
+    --- Returns
     --- @return table instance
     ---
     function class:__init__(attributes)
@@ -22,8 +33,9 @@ function cls(className)
         return instance
     end
 
-    --- Returns Class Name
-    --- @method __name__
+    --- Get Name of Class
+    ---
+    --- Returns
     --- @return string __name
     ---
     function class:__name__()
