@@ -7,7 +7,6 @@ Useful Library for Lua with `projects` from [ `mstvb` ]
 - [Libraries](#libraries)
 - [Project Links](#project-links)
 - [Authors](#authors)
-- [License](#license)
 
 ## Libraries
 
@@ -15,7 +14,6 @@ Useful Library for Lua with `projects` from [ `mstvb` ]
 | ----------- | ---- | ----------- |
 | class | `libraries/class` | Class Implementation |
 | match | `libraries/match` | Switch-Case Statements |
-| inline | `-- not ready --` | Package Manager for Lua | 
 
 ## Project Links
 
