@@ -1,11 +1,16 @@
 --- @class statement
---- @constructor
---- @field match self
---- @field __index table
---- @field default nil
---- @field instance table
 --- 
---- @return statement | table
+--- Attributes
+--- @field __index table
+--- @field default boolean|function
+---
+--- Methods
+--- @field add function
+--- @field set_default function
+--- @field get function
+--- 
+--- Returns
+--- @return table match
 ---
 function statement() 
 	local match = {}
@@ -13,47 +18,54 @@ function statement()
 	match.default = false
 
 	--- Add Match Statement
-	--- @method add
+	---
+	--- Parameters
 	--- @param key string
 	--- @param statement function
 	---
+	--- Attributes
+	--- @field match table
+	---
 	function match:add(key, statement)	
-		--- IF key and statement
 		if key and statement then
 			self[key] = statement
-		--- ELSE
 		else
 			error('Key | Statement not exists')
 		end
 	end
 
 	--- Set Default Option
-	--- @method set_default
+	---
+	--- Parameters
 	--- @param default function
 	---
+	--- Attributes
+	--- @field match table
+	---
 	function match:set_default(default)
-		--- IF default
 		if default then
 			self.default = default
-		--- ELSE
 		else
 			error('Default not exists')
 		end
 	end
 
 	--- Check if Equal Function
-	--- @method get
-	--- @param equal any
-	--- @return self function
 	--- 
+	--- Parameters
+	--- @param equal string
+	---
+	--- Attributes
+	--- @field match table
+	--- 
+	--- Returns
+	--- @return function
+	---
 	function match:get(equal)
-		--- IF Equal
 		if equal then
 			return self[equal]
-		--- ELSE IF --
 		elseif type(self.default) == 'function' then
 			return self.default()
-		--- ELSE
 		else
 			error('Equal not exists')
 		end
