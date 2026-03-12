@@ -1,3 +1,5 @@
+Class = {}
+
 --- @class cls
 --- 
 --- Parameters
@@ -5,42 +7,76 @@
 ---
 --- Attributes
 --- @field __name string
---- @field __index table
 ---
 --- Methods
---- @field __init__ function
---- @field __name__ function
+--- @field new fun(className) Class Constructor
+--- @field set fun(key, val) Set Class Attribute
+--- @field get fun(key) Get Class Attribute
+--- @field __str__ fun() Class as String
+---
+
+--- Class Instructor
+---
+--- Parameters
+--- @param className string
+---
+--- Attributes
+--- @field self Class
+--- @field __name string
 --- 
 --- Returns
---- @return class instance
+--- @return Class
 ---
-function cls(className)
-    
-    local class = {}
-    class.__name = className
-    class.__index = class
+function Class:new(className)
+    setmetatable({}, self)
+    self.__name = className
+    return self
+end
 
-    --- Initialize Class
-    --- 
-    --- Parameters
-    --- @param attributes? table
-    ---
-    --- Returns
-    --- @return table instance
-    ---
-    function class:__init__(attributes)
-        local instance = setmetatable(attributes or {}, class)
-        return instance
-    end
+--- Set Class Attribute
+---
+--- Parameters
+--- @param key string
+--- @param val any
+--- 
+--- Attributes
+--- @field self Class
+--- 
+--- Returns
+--- @return self Class
+---
+function Class:set(key, val)
+  self[key] = val
+    return self
+end
 
-    --- Get Name of Class
-    ---
-    --- Returns
-    --- @return string __name
-    ---
-    function class:__name__()
-        return self.__name
-    end
+--- Get Class Attributes
+--- 
+--- Parameters
+--- @param key string
+---
+--- Attributes
+--- @field self Class
+---
+--- Returns
+--- @return any
+---
+function Class:get(key)
+  if key in self then
+    return self[key]
+  else
+    return nil
+  end
+end
 
-    return class
+--- Class as String
+---
+--- Attributes
+--- @field __name string
+--- 
+--- Returns
+--- @return string
+---
+function Class:__str__()
+  return self.__name
 end
