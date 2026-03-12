@@ -15,7 +15,6 @@ Statement = {}
 ---
 function Statement:new() 
 	setmetatable({}, self)
-    self.__index = match
 	self.default = false
 
 --- Add Match Statement
