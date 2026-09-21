@@ -1,82 +1,60 @@
-Class = {}
+-- class.lua
+-- @module class
+-- @description Einfaches Class OOP-Framework for Lua
+-- @author mstvb/lua-libs
+-- @version 1.0.0
 
---- @class cls
---- 
---- Parameters
---- @param className string
----
---- Attributes
---- @field __name string
----
---- Methods
---- @field new fun(className) Class Constructor
---- @field set fun(key, val) Set Class Attribute
---- @field get fun(key) Get Class Attribute
---- @field __str__ fun() Class as String
----
+local Class = {}
+Class.__index = Class
 
---- Class Instructor
+--- @class Class
+--- @field private __name string
+--- @field public __index table
 ---
---- Parameters
+--- @field public new fun(className: string): Class
+--- @field public set fun(key: string, val: any): Class
+--- @field public get fun(key: string): any
+--- @field public __str__ fun(): string
+
+--- Create Instance
 --- @param className string
----
---- Attributes
---- @field self Class
---- @field __name string
---- 
---- Returns
---- @return Class
----
+--- @return Class instance
+--- @example
+---     local MyObject = Class:new("MyObject")
 function Class:new(className)
-    setmetatable({}, self)
-    self.__name = className
-    return self
+    local instance = setmetatable({}, self)
+    instance.__name = className
+    return instance
 end
 
---- Set Class Attribute
----
---- Parameters
+--- Set Option from Class
 --- @param key string
 --- @param val any
---- 
---- Attributes
---- @field self Class
---- 
---- Returns
---- @return self Class
----
+--- @return Class self
+--- @example
+---     obj:set("greeting", "Hallo")
+---     obj:set("count", 42)
 function Class:set(key, val)
-  self[key] = val
+    self[key] = val
     return self
 end
 
---- Get Class Attributes
---- 
---- Parameters
+--- Returns Value from Class
 --- @param key string
----
---- Attributes
---- @field self Class
----
---- Returns
 --- @return any
----
+--- @example
+---     local greeting = obj:get("greeting")
 function Class:get(key)
-  if key in self then
     return self[key]
-  else
-    return nil
-  end
 end
 
---- Class as String
----
---- Attributes
---- @field __name string
---- 
---- Returns
+--- Returns Class Name
 --- @return string
----
+--- @example
+---     print(obj:__str__())  -- Ausgabe: "MyClass"
 function Class:__str__()
-  return self.__name
+    return self.__name
 end
+
+--- @return Class
+return Class
