@@ -1,34 +1,26 @@
-# Contributing to `lua-libs`
+# Contributing Guide
 
-> Documentation for `@contributors`
+Thank you for your interest in contributing to this project! We welcome contributions from everyone. Please read these guidelines to help make the contribution process smooth and effective.
 
-**Welcome @contributor this Project needs your Help.**
-- Bug Report | Troubleshooting
-- Ideas | Features
-- Dev Feedback
+## Quick Start
 
----
+### Prerequisites
 
-- ### :bug: Bug Report 
+- **Lua** | Lua 5.4 or higher | [Lua](https://www.lua.org/download.html)
+- **Git** | Version Control | [Git](https://git-scm.com)
 
-  > Please use Issue Template `troubleshooting` for Bugs
+### Getting Started
 
-- ### :bulb: Ideas | :wrench: Features
+```bash
+# Clone Repository
+git clone https://github.com/mstvb/lua-libs
 
-  > Please use Issue Template `request` for Ideas or Features
+# Go to Directory
+cd forge-api
 
-- ### :bookmark_tabs: Dev Feedback
-  
-  > Create a Feedback from a `library`
+# Execute `main.lua` Lua Script
+lua main.lua
 
-- ### :notebook: Documenation
-
-  > Use `numpydoc` and `Lua Annotations` as Code Style 
-
-- ### :book: References
-
-  - [1] [Templates](https://github.com/mstvb/forge-api/issues/new/choose)
-  - [2] [numpydoc](https://numpydoc.readthedocs.io/en/latest/format.html)
-  - [3] [Lua Annotations](https://www.barbarianmeetscoding.com/notes/lua/annotations/)
-
-
+# Execute a Example from `/examples`
+lua translation_example.lua
+```
