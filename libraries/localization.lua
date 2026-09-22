@@ -20,9 +20,9 @@ Localization.config = {
 --- @field public config table
 ---
 --- @return Localization self
-function Localization:init(translation)
+function Localization:new(translation)
     self.config.translations = translation or {}
-    self:setLanguage(self.config.default_lang)
+    self:set_language(self.config.default_lang)
 end
 
 --- Set Language
@@ -30,7 +30,7 @@ end
 --- @param lang string 
 ---
 --- @return boolean
-function Localization:setLanguage(lang)
+function Localization:set_language(lang)
     if self.config.translations[lang] then
         self.config.current_lang = lang
         return true
