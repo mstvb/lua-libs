@@ -15,8 +15,8 @@ local translations = {
     }
 }
 
-Localization:init(translations)
-Localization:setLanguage('de')
+Localization:new(translations)
+Localization:set_language('de')
 
 print(Localization:translate("login_success", {username="username"}))
 print(Localization:translate("balance", {amount="1.520,50"}))
